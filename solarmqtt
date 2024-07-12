@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ "$1" == "-h" ]]; then
+	echo ""
+	echo "Usage : mqttsolar"
+	exit -1
+fi
+/web/solar/data/voltronic | mosquitto_pub -i solar -L mqtts://user:pass@example.com:8883/solar/data -l -r

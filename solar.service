@@ -1,0 +1,15 @@
+[Unit]
+Description=Voltronic Inverter log
+After=network.target network-online.target ssh.service
+
+
+[Service]
+User=habib
+WorkingDirectory=/home/habib
+Restart=always
+RestartSec=20s
+
+ExecStart=/web/solar/data/solarmqtt
+
+[Install]
+WantedBy=multi-user.target
